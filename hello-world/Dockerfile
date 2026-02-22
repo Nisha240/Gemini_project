@@ -9,8 +9,7 @@ FROM tomcat:9.0-jdk11
 RUN rm -rf /usr/local/tomcat/webapps/*
 
 # Copy WAR into Tomcat
-COPY hello-world/target/webapp.war /usr/local/tomcat/webapps/webapp.war
-
+COPY hello-world/webapp/target/*.war /usr/local/tomcat/webapps/webapp.war
 EXPOSE 8080
 
 CMD ["catalina.sh", "run"]
